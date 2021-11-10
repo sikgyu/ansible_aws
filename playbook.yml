@@ -1,0 +1,18 @@
+---
+- hosts: tutorials
+  tasks:
+    - name: include role nodejs
+      include_role:
+        name: nodejs
+    - name: include role database
+      include_role:
+        name: database
+    - name: include role backend
+      include_role:
+        name: backend
+    - name: include role frontend
+      include_role:
+        name: frontend
+    - name: print info
+      debug:
+        msg: "You can access the app at http://{{ ansible_host }}/."
